@@ -1,0 +1,66 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 50px;
+  padding: 0px;
+}
+
+.container {
+  margin-top: 0px;
+  display: grid;
+  grid-template-rows: 180px 180px 180px;
+  grid-template-columns: 180px 180px 180px;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #555;
+  font-size: 100px;
+}
+
+.innerGrid {
+  font-size: 100px;
+}
+
+#square1 {
+  border-top: transparent;
+  border-left: transparent;
+}
+
+#square2 {
+  border-top: transparent;
+}
+
+#square3 {
+  border-top: transparent;
+  border-right: transparent;
+}
+
+#square4 {
+  border-left: transparent;
+}
+
+#square6 {
+  border-right: transparent;
+}
+
+#square7 {
+  border-bottom: transparent;
+  border-left: transparent;
+}
+
+#square8 {
+  border-bottom: transparent;
+}
+
+#square9 {
+  border-bottom: transparent;
+  border-right: transparent;
+}
