@@ -12,15 +12,17 @@ const gameBoard = (() => {
   const board = [];
 
   function addXO() {
-    if (board.pop() == "X") {
-      this.innerHTML = "O";
-      board.push("O");
-    } else if (board.pop() == "O") {
-      this.innerHTML = "X";
-      board.push("X");
-    } else {
-      this.innerHTML = "X";
-      board.push("X");
+    if (this.innerHTML === "") {
+      if (board[board.length - 1] == "X") {
+        this.innerHTML = "O";
+        board.push("O");
+      } else if (board[board.length - 1] == "O") {
+        this.innerHTML = "X";
+        board.push("X");
+      } else {
+        this.innerHTML = "X";
+        board.push("X");
+      }
     }
   }
 
