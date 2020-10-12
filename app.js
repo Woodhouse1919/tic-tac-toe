@@ -1,7 +1,8 @@
 // Gameboard module
-const gameboard = (() => {
+const game = (() => {
   // grabbing DOM Elements
   const grid = document.querySelectorAll(".grid");
+  const restartBtn = document.querySelector(".restart");
   const winningCombo = [
     [0, 1, 2], // Row 1
     [3, 4, 5], // Row 2
@@ -17,6 +18,8 @@ const gameboard = (() => {
   grid.forEach((grid) => {
     grid.addEventListener("click", addXO);
   });
+
+  restartBtn.addEventListener("click", reset);
 
   // Gameboard array
   let board = [];
@@ -46,18 +49,15 @@ const gameboard = (() => {
         grid[winningCombo[i][1]].textContent === "X" &&
         grid[winningCombo[i][2]].textContent === "X"
       ) {
-        alert("X Winner");
-        reset();
+        alert("X Wins!");
       } else if (
         grid[winningCombo[i][0]].textContent === "O" &&
         grid[winningCombo[i][1]].textContent === "O" &&
         grid[winningCombo[i][2]].textContent === "O"
       ) {
-        alert("O Winner");
-        reset();
+        alert("O Wins!");
       } else if (board.length === 9) {
-        alert("Tie");
-        reset();
+        console.log('tie');
       }
     }
   }
@@ -71,8 +71,6 @@ const gameboard = (() => {
 
   return { checkWin, reset };
 })();
-
-const game = (() => {})();
 
 // Factory to generate new players
 const playerFactory = (name) => {
